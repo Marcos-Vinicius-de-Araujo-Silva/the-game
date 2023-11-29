@@ -1,23 +1,29 @@
 body {
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     font-family: Arial, sans-serif;
+    margin: 0; /* Remover margens padrão do corpo da página */
+}
+
+* {
+    color: white;
+    box-sizing: border-box; /* Inclui as bordas e o preenchimento no cálculo do tamanho do elemento */
 }
 
 ul {
     list-style-type: none;
+    padding: 0; /* Remover o preenchimento padrão da lista */
 }
 
 li {
     margin-top: 15px;
-    
 }
 
 a {
     text-decoration: none;
-    color: #333;
     font-weight: bold;
     font-size: 20px;
     padding: 10px;
@@ -25,5 +31,14 @@ a {
 }
 
 a:hover {
-    color: #ffcc00; 
+    color: rgb(17, 192, 236); 
+}
+
+footer {
+    background-color: #333; /* Cor de fundo do rodapé */
+    color: white; /* Cor do texto no rodapé */
+    text-align: center; /* Alinha o texto no centro do rodapé */
+    position: fixed; /* Mantém o rodapé fixo na parte inferior da tela */
+    width: 100%; /* Ocupa a largura total da tela */
+    bottom: 0; /* Coloca o rodapé no final da página */
 }

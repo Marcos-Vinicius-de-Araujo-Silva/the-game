@@ -1,0 +1,41 @@
+/* body {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+} */
+
+body{
+    background-color: black;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1300px) {
+    div {
+      flex-direction: column; 
+    }
+  }
+
+img{
+    width: 100%;
+    max-width: 500px; 
+    height: auto;
+    margin: 4px;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+ img:hover {
+    transform: scale(1.1);
+  }
+
+  h1{
+    color: white;
+    text-align: center;
+    font-size: 4em;
+  }
