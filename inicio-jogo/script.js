@@ -1,8 +1,11 @@
 var fra = [
-  "Bem-vindo ao jogo!",
-  "Esta é a segunda frase.",
-  "Adicione quantas frases desejar."
+  "Welcome the game!",
+  "This is the second phrase.",
+  "Add how many phrases you wish."
 ];
+
+
+
 
 /* var fra = [
   "Welcome the game!",
@@ -27,19 +30,22 @@ async function runTypewriter(frases) {
   for (let i = 0; i < frases.length; i++) {
     await typeWriter(frases[i], 50);
   }
-  creatBottom()
 }
+
+
 
 
 function creatBottom(){
 const button = document.createElement('button');
 
 // Define o texto do botão
-button.textContent = 'Clique em mim';
+button.textContent = 'Continue';
 
 // Adiciona um manipulador de eventos ao botão (opcional)
 button.addEventListener('click', function() {
-  alert('Botão clicado!');
+  document.getElementsByTagName('p')[0].innerHTML = "";
+
+  runTypewriter(fra);
 });
 
 // Encontra o elemento no qual você deseja anexar o botão (por exemplo, o corpo do documento)
@@ -49,4 +55,12 @@ const body = document.getElementById('bottom');
 body.appendChild(button);
 }
 
+
+
+
+
+
+
 runTypewriter(fra);
+
+creatBottom()
