@@ -12,17 +12,11 @@ div{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
-@media (max-width: 1300px) {
-    div {
-      flex-direction: column; 
-    }
-  }
-
 img{
-    width: 100%;
+    /* width: 100%; */
     max-width: 500px; 
     height: auto;
     margin: 4px;
@@ -39,3 +33,50 @@ img{
     text-align: center;
     font-size: 4em;
   }
+
+  @media (max-width: 1600px){
+    img {
+      width: 300px;
+      margin-top: 16px;
+      margin: 3px;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin: 20px;
+    }
+  }
+
+  @media (max-width: 968px) {
+    div {
+      flex-direction: column; 
+    }
+    
+  }
+
+  @media (max-width: 500px) and (max-height: 950px) {
+    img {
+        width: 145px;
+        margin-top: 9px; /* Correção da propriedade margin-top */
+        margin: 2px; /* Esta linha é redundante, pois a propriedade margin foi definida acima */
+    }
+
+    h1 {
+        font-size: 15px;
+        margin: 12px;
+    }
+}
+
+
+  @media (max-width: 540px) and (max-height: 920px) {
+    img {
+        width: 150px;
+        margin-top: 9px; /* Correção da propriedade margin-top */
+        margin: 2px; /* Esta linha é redundante, pois a propriedade margin foi definida acima */
+    }
+
+    h1 {
+        font-size: 15px;
+        margin: 12px;
+    }
+}

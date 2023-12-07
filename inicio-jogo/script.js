@@ -1,11 +1,21 @@
-var fra = [
-  "Welcome the game!",
-  "This is the second phrase.",
-  "Add how many phrases you wish."
-];
+const phrases = [[
+  "You shall die one",
+  "You shall die two",
+  "You shall die three"
+], [
+  "You shall die four",
+  "You shall die five",
+  "You shall die six"
+] ]
 
 
+function *phrasesTh(){
+  for(let i = 0; i < phrases.length; i++){
+    yield phrases[i]
+  }
+}
 
+let phr = phrasesTh()
 
 /* var fra = [
   "Welcome the game!",
@@ -33,8 +43,6 @@ async function runTypewriter(frases) {
 }
 
 
-
-
 function creatBottom(){
 const button = document.createElement('button');
 
@@ -45,7 +53,7 @@ button.textContent = 'Continue';
 button.addEventListener('click', function() {
   document.getElementsByTagName('p')[0].innerHTML = "";
 
-  runTypewriter(fra);
+  runTypewriter(phrasesTh().next().value);
 });
 
 // Encontra o elemento no qual você deseja anexar o botão (por exemplo, o corpo do documento)
@@ -56,11 +64,6 @@ body.appendChild(button);
 }
 
 
-
-
-
-
-
-runTypewriter(fra);
+runTypewriter();
 
 creatBottom()
