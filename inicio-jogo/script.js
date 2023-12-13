@@ -1,69 +1,28 @@
-const phrases = [[
-  "You shall die one",
-  "You shall die two",
-  "You shall die three"
-], [
-  "You shall die four",
-  "You shall die five",
-  "You shall die six"
-] ]
+let cont = 1
 
+let paragraph = document.getElementsByTagName('p')[0]
 
-function *phrasesTh(){
-  for(let i = 0; i < phrases.length; i++){
-    yield phrases[i]
+paragraph.innerHTML = "Hi"
+
+let setPhrases = [
+   "HTML, CSSS and JavaScript", "Bootstrap and PrimeNG", "SpringBoot, Angular and Postgresql"
+]
+
+function* writePhrases(){
+  for(index in setPhrases){
+    yield setPhrases[index]
+    cont++
   }
 }
 
-let phr = phrasesTh()
+const iteradorwritePhrases = writePhrases()
 
-/* var fra = [
-  "Welcome the game!",
-  "This is the second phrase.",
-  "Add how many phrases you wish."
-];
- */
-async function typeWriter(text, speed) {
-  const outputElement = document.getElementsByTagName('p')[0];
-  for (let i = 0; i < text.length; i++) {
-    outputElement.innerHTML += text[i];
-    await sleep(speed);
-  }
-  outputElement.innerHTML += '<br>'; // Adiciona uma quebra de linha ao final de cada frase
+let changeParagraph = (iteradorwritePhrases) => {
+
+  if(cont < setPhrases.length)
+     paragraph.innerHTML = iteradorwritePhrases.next().value
 }
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+function call_changeParagraph(){
+changeParagraph(iteradorwritePhrases)
 }
-
-async function runTypewriter(frases) {
-  for (let i = 0; i < frases.length; i++) {
-    await typeWriter(frases[i], 50);
-  }
-}
-
-
-function creatBottom(){
-const button = document.createElement('button');
-
-// Define o texto do botão
-button.textContent = 'Continue';
-
-// Adiciona um manipulador de eventos ao botão (opcional)
-button.addEventListener('click', function() {
-  document.getElementsByTagName('p')[0].innerHTML = "";
-
-  runTypewriter(phrasesTh().next().value);
-});
-
-// Encontra o elemento no qual você deseja anexar o botão (por exemplo, o corpo do documento)
-const body = document.getElementById('bottom');
-
-// Anexa o botão ao elemento desejado
-body.appendChild(button);
-}
-
-
-runTypewriter();
-
-creatBottom()
